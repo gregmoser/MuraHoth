@@ -7,7 +7,7 @@
 	<version>0.1</version>
 	<provider>Greg Moser</provider>
 	<providerURL>http://www.gregmoser.com</providerURL>
-	<category>Application</category>
+	<category>Utility</category>
 	<settings>
 		<setting>
 			<name>EmailNewExceptions</name>

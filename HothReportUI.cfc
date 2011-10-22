@@ -26,8 +26,11 @@ component {
 
 	/** Loads the Web UI (HTML) **/
 	remote function index () returnformat='plain' {
-		local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
-		return local.HothReport.getReportView();
+		if(listFind(session.mura.memberships,'S2')){
+			local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
+			return local.HothReport.getReportView();	
+		}
+		return '';
 	}
 
 	/** Access Hoth report data as JSON.
@@ -36,25 +39,31 @@ component {
 					modified the behavior to return information for only
 					that exception. **/
 	remote function report (string exception) returnformat='JSON' {
-		local.report = (structKeyExists(arguments, 'exception')
-		? arguments.exception
-		: 'all');
-
-		local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
-		return local.HothReport.report(local.report);
+		if(listFind(session.mura.memberships,'S2')){
+			local.report = (structKeyExists(arguments, 'exception')
+			? arguments.exception
+			: 'all');
+	
+			local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
+			return local.HothReport.report(local.report);
+		}
+		return '';
 	}
 
 	/** Delete a report. **/
 	remote function delete (string exception)returnformat='JSON'  {
-		if (!structKeyExists(arguments, 'exception'))
-		{
-			// We can delete all exceptions at once!
-			arguments.exception = 'all';
+		if(listFind(session.mura.memberships,'S2')){
+			if (!structKeyExists(arguments, 'exception'))
+			{
+				// We can delete all exceptions at once!
+				arguments.exception = 'all';
+			}
+	
+			local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
+	
+			// Delete!
+			return local.HothReport.delete(arguments.exception);
 		}
-
-		local.HothReport = new Hoth.HothReporter(variables.ApplicationsHothConfig);
-
-		// Delete!
-		return local.HothReport.delete(arguments.exception);
+		return '';
 	}
 }
