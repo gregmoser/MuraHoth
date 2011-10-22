@@ -66,7 +66,7 @@ component
 	**/
 	property
 		name='HothReportURL'
-		default='/plugins/Hoth/HothReportUI.cfc';
+		default='/plugins/Hoth/';
 
 	// -------------------------------------------------------------------------
 	// Constructor

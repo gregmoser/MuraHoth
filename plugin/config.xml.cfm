@@ -5,7 +5,7 @@
 	<directoryFormat>packageOnly</directoryFormat>
 	<loadPriority>5</loadPriority>
 	<version>0.1</version>
-	<provider>Greg Moser | Aaron Greenlee (Hoth Developer - http://aarongreenlee.com/hoth)</provider>
+	<provider>Greg Moser</provider>
 	<providerURL>http://www.gregmoser.com</providerURL>
 	<category>Utility</category>
 	<settings>
