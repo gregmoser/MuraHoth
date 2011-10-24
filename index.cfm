@@ -95,11 +95,13 @@
 				var exLinksHTML = '';
 				for (var i in Hoth.ExceptionsByVolume)
 				{
-					var ex = Hoth.ExceptionsByVolume[i];
-					convertKeysToLowercase(ex);
-					exLinksHTML += '<li><a href="#' + ex.filename + '" data-id="' + ex.filename + '">' +
-					ex.js.short + '</a> (' + ex.incidentcount + ')</li>';
-					jQuery('#listing ul').html(exLinksHTML);
+					if(!isNaN(i)){
+						var ex = Hoth.ExceptionsByVolume[i];
+						convertKeysToLowercase(ex);
+						exLinksHTML += '<li><a href="#' + ex.filename + '" data-id="' + ex.filename + '">' +
+						ex.js.short + '</a> (' + ex.incidentcount + ')</li>';
+						jQuery('#listing ul').html(exLinksHTML);	
+					}
 				}
 				
 			}
