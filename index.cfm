@@ -126,7 +126,7 @@
 							<a href="#" class="deleteLink" rel="' + id + '">Delete Reports</a></div>';
 							
 							convertKeysToLowercase(ex);
-							console.log(ex);
+							
 							var detail = '<dl>'
 							+ '<dt>URL</dt><dd>' + ex.url + '</dd>'
 							+ '<dt>User Agent</dt><dd>' + ex.client + '</dd>'
