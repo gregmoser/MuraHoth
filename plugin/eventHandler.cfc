@@ -28,4 +28,12 @@ component extends="mura.plugin.pluginGenericEventHandler" {
 		} catch(any e){}
 	}
 
+	public function onAdminModuleNav() {
+		var newLinks = '';
+		if (listFind(session.mura.memberships,'S2')){
+			newLinks = '<li><a href="#application.configBean.getContext()#/plugins/Hoth">Exception Tracking</a></li>';
+			}
+		return newLinks;
+	}
+	
 }
