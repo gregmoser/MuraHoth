@@ -59,7 +59,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		var HOTH_REPORT_URI = '/plugins/Hoth/HothReportUI.cfc';
+		var HOTH_REPORT_URI = '#application.configBean.getContext()#/plugins/Hoth/HothReportUI.cfc';
 		
 		jQuery().ready(function() {
 			var Hoth = {
