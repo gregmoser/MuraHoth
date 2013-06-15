@@ -50,7 +50,7 @@
 		</setting>
 		<setting>
 			<name>EmailNewExceptionsFile</name>
-			<label>Inclide Exception File with New Exception Emails</label>
+			<label>Include Exception File with New Exception Emails</label>
 			<hint></hint>
 			<type>RadioGroup</type>
 			<required>true</required>
