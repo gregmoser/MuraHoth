@@ -74,6 +74,19 @@
 			<optionlist>false^true</optionlist>
 			<optionlabellist>No^Yes</optionlabellist>
 		</setting>
+		<setting>
+			<name>RedirectPage</name>
+			<label>Redirect Page</label>
+			<hint>Content filename of your Mura error page. (Blank = no redirection)</hint>
+			<type>text</type>
+			<required>false</required>
+			<validation></validation>
+			<regex></regex>
+			<message></message>
+			<defaultvalue></defaultvalue>
+			<optionlist></optionlist>
+			<optionlabellist></optionlabellist>
+		</setting>		
 	</settings>
 	<eventHandlers>
 		<eventHandler event="onApplicationLoad" component="plugin.eventHandler" persist="false" />
