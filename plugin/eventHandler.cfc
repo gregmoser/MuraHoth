@@ -25,6 +25,17 @@ component extends="mura.plugin.pluginGenericEventHandler" {
 			
 			// Track Exception w/Hoth
 			application.HothTracker.track(arguments.$.event('exception'));
+			
+			// Redirect if URL provided
+			if (
+				len(trim(variables.pluginConfig.getSetting('redirectPage'))) 
+				and $.content().getFilename() is not trim(variables.pluginConfig.getSetting('redirectPage'))
+				){
+					local.redirectUrl = $.getBean('content').loadBy(title=trim(variables.pluginConfig.getSetting('redirectPage'))).getURL(complete=true);
+					location(local.redirectUrl,false);
+					abort;
+				}
+
 		} catch(any e){}
 	}
 
