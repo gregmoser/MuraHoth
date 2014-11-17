@@ -107,10 +107,10 @@
 			}
 	
 			// -----------------------------------------------------------------
-			jQuery('#listing a').live('click',function(){
+			jQuery('#listing').on('click','a', function(){
 				var id = jQuery(this).attr('data-id').toLowerCase();
 				formatException(id);
-			});	
+			});		
 			
 			function formatException(id) {			
 				jQuery.ajax(
