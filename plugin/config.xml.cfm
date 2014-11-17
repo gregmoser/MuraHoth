@@ -4,7 +4,7 @@
 	<package>Hoth</package>
 	<directoryFormat>packageOnly</directoryFormat>
 	<loadPriority>5</loadPriority>
-	<version>0.9</version>
+	<version>1.0</version>
 	<provider>Greg Moser</provider>
 	<providerURL>http://www.gregmoser.com</providerURL>
 	<category>Utility</category>
